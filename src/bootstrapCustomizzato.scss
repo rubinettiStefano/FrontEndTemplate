@@ -1,0 +1,22 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+
+$dropdown-item-padding-y:           $spacer * 2.5;
+$theme-colors: (
+  "primary":    #e86d06,
+  "secondary":  #4978d8,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "paperino":    #f50b0b,
+);
+
+
+.btn-outline-paperino:hover {
+    color: #fff !important; // Mantiene il testo bianco
+}
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

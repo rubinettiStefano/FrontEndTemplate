@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center align-items-center vh-75">
+  <div class="card" style="width: 36rem;">
+    <div class="card-body">
+      <h5 class="card-title">Batch Details</h5>
+
+      <span *ngIf="!inModifica">
+        <p class="card-text">
+          <strong>ID:</strong> {{ batch?.id }}<br>
+          <strong>Variety:</strong> {{ batch?.variety }}<br>
+          <strong>Weight (kg):</strong> {{ batch?.weight }}<br>
+          <strong>Price per Kg:</strong> {{ batch?.pricePerKg | currency : "EUR" : "symbol" }}<br>
+          <strong>Production Date:</strong> {{ batch?.productionDate | date: 'dd/MM/yyyy' }}<br>
+          <strong>Customer Name:</strong> {{ batch?.customerName }}<br>
+          <strong>Total Price:</strong> {{ batch?.price | currency : "EUR" : "symbol" }}
+        </p>
+      </span>
+
+      <span *ngIf="inModifica">
+        <p class="card-text">
+          <strong>ID:</strong> {{ batch?.id }}<br>
+          <strong>Variety:</strong> <input class="form-control mb-2" [(ngModel)]="batchInModifica!.variety"><br>
+          <strong>Weight (kg):</strong> <input class="form-control mb-2" [(ngModel)]="batchInModifica!.weight"><br>
+          <strong>Price per Kg:</strong> <input class="form-control mb-2" [(ngModel)]="batchInModifica!.pricePerKg"><br>
+          <strong>Customer Name:</strong> <input class="form-control mb-2" [(ngModel)]="batchInModifica!.customerName"><br>
+        </p>
+      </span>
+    </div>
+
+    <!-- Sezione bottoni -->
+    <div class="card-footer d-flex justify-content-between">
+      <button *ngIf="!inModifica" class="btn btn-primary" (click)="mettiInModifica()">MODIFICA</button>
+      <div *ngIf="inModifica" class="d-flex gap-2">
+        <button class="btn btn-secondary" (click)="annullaModifica()">ANNULLA</button>
+        <button class="btn btn-success" (click)="salva()">SALVA</button>
+      </div>
+    </div>
+  </div>
+</div>

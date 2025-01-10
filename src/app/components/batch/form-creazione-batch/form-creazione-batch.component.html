@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center align-items-center vh-75">
+  <div class="card" style="width: 36rem;">
+    <div class="card-body">
+      <h5 class="card-title">Creazione Batch</h5>
+      <p class="card-text">
+        <strong>Variety:</strong> <input class="form-control mb-2" [(ngModel)]="batch!.variety"><br>
+        <strong>Weight (kg):</strong> <input class="form-control mb-2" [(ngModel)]="batch!.weight"><br>
+        <strong>Price per Kg:</strong> <input class="form-control mb-2" [(ngModel)]="batch!.pricePerKg"><br>
+        <strong>Customer Name:</strong> <input class="form-control mb-2"
+                                               [(ngModel)]="batch!.customerName"><br>
+      </p>
+    </div>
+
+    <!-- Sezione bottoni -->
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-success" (click)="salva()">SALVA</button>
+    </div>
+  </div>
+</div>
