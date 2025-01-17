@@ -3,6 +3,7 @@
     <div class="card-body">
       <h5 class="card-title">{{batch?.productionDate}}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">{{batch?.customerName}}</h6>
+      <!--                                     "/batches/"+batch?.id           -->
       <p class="card-body"><a [routerLink]='["/batches/",batch?.id]'>VAI AL DETTAGLIO</a>  </p>
       <button class="btn btn-danger" (click)="cancella()">CANCELLA</button>
     </div>

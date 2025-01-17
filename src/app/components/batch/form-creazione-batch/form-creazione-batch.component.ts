@@ -15,24 +15,21 @@ import {FormsModule} from '@angular/forms';
 })
 export class FormCreazioneBatchComponent {
 
-  batch:RiceBatchDTOReq=  {
-    variety:"",
-    weight:0,
-    pricePerKg:0,
-    customerName:""
+  batch: RiceBatchDTOReq = {
+    variety: "",
+    weight: 0,
+    pricePerKg: 0,
+    customerName: ""
   };
 
-  constructor(private httpService: HttpService, private route: Router)
-  {  }
+  constructor(private httpService: HttpService, private route: Router) {}
 
-  salva()
-  {
+  salva() {
     this.httpService.insertRiceBatch(this.batch).subscribe
     (
-      ()=>
-      {
+      () => {
         this.route.navigate(["/batches"]);
       }
-    )
+    );
   }
 }
